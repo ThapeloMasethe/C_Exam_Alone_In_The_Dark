@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cycle_detector.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/10 10:07:51 by tmasethe          #+#    #+#             */
+/*   Updated: 2018/07/10 10:38:06 by tmasethe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "list.h"
+#include <stdlib.h>
+
+int		cycle_detector(const t_list *list)
+{
+	const t_list	*slow_ptr;
+	const t_list	*fast_ptr;
+
+	slow_ptr = list;
+	fast_ptr = list;
+	while (slow_ptr && fast_ptr && fast_ptr->next)
+	{
+		slow_ptr = slow_ptr->next;
+		fast_ptr = fast_ptr->next->next;
+		if (slow_ptr == fast_ptr)
+			return (1);
+	}
+	return (0);
+}

@@ -1,0 +1,59 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r5p18.42.fr
+Darwin 16.7.0 x86_64
+$> date
+Tue Jul 10 10:41:27 CEST 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/practice-exam_20180710/tmasethe
+
+= Git history ==================================================================
+$> git -C /var/folders/cq/kq7d7rfd16gdd40r1ph3lbfw0000gq/T/tmpSBK5qo/user log --pretty='%H - %an, %ad : %s'
+f66d4dc18be5fe622c0b40fbff36d00af6d36931 - Thapelo MASETHE, Tue Jul 10 10:39:09 2018 +0200 : changes
+ffe6450940f8e881bce33474557b9b4170352f90 - Thapelo MASETHE, Tue Jul 10 09:40:03 2018 +0200 : split
+eb5debc38563c2e2dbdfa7909fe0f03f4142768e - Thapelo MASETHE, Tue Jul 10 09:29:00 2018 +0200 : cp
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/cq/kq7d7rfd16gdd40r1ph3lbfw0000gq/T/tmpSBK5qo/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  810 Jul 10 10:41 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jul 10 10:41 cycle_detector
+drwxr-xr-x  3 deepthought  deepthought  102 Jul 10 10:41 ft_split
+drwxr-xr-x  3 deepthought  deepthought  102 Jul 10 10:41 rstr_capitalizer
+
+/var/folders/cq/kq7d7rfd16gdd40r1ph3lbfw0000gq/T/tmpSBK5qo/user/cycle_detector:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1236 Jul 10 10:41 cycle_detector.c
+
+/var/folders/cq/kq7d7rfd16gdd40r1ph3lbfw0000gq/T/tmpSBK5qo/user/ft_split:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2029 Jul 10 10:41 ft_split.c
+
+/var/folders/cq/kq7d7rfd16gdd40r1ph3lbfw0000gq/T/tmpSBK5qo/user/rstr_capitalizer:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1763 Jul 10 10:41 rstr_capitalizer.c
+ 
+= cycle_detector ===============================================================
+$> clang -Wextra -Wall -Werror main.c test_cycle_detector.c cycle_detector.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./l028nb668yaf8fsogjymsr4e
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================
